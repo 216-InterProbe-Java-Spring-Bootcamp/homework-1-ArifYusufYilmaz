@@ -18,18 +18,8 @@ public interface ProductCommentDao extends JpaRepository<ProductComment, Long> {
     //verilen tarih aralıklarında belirli bir ürüne yapılmış olan yorumları gösteren bir metot
     List<ProductComment> findAllByProductIdAndCommentDateBetween(Long productId, Date firstDate, Date secondDate);
 
-    //Bir kullanıcının belirli tarihler aralığında yapmış olduğu yourmları gösteren bir metot
+    //Bir kullanıcının belirli tarihler aralığında yapmış olduğu yorumları gösteren bir metot
     List<ProductComment> findAllByUser_IdAndCommentDateBetween(Long userId, Date firstDate, Date secondDate);
 }
 
 
-// Requirements
-/*
-Bir ürüne ait yorumları listeleyen bir metod//
-verilen tarih aralıklarında belirli bir ürüne yapılmış olan yorumları gösteren bir metot//
-Bir kullanıcının yapmış olduğu yorumları listeleyen bir metot//
-Bir kullanıcının belirli tarihler aralığında yapmış olduğu yourmları gösteren bir metot//
-son kullanma tarihi geçmiş ürünleri listeleyen bir metot//
-son kullanma tarihi geçmemiş ürünleri listeleyen bir metot(son kullanma tarihi boş olanlar da gelmeli)
-
-*/

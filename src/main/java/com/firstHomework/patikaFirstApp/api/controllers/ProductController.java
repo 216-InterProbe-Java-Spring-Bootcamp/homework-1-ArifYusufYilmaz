@@ -23,13 +23,12 @@ public class ProductController {
     public List<Product> getAllProducts(){
         return this.productService.getAllProducts();
     }
-    @GetMapping("/v1/{expiryDate}")
+    @GetMapping("/lessthan/{expiryDate}")
     public List<Product> findAllByExpiryDateLessThan(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd")Date expiryDate){
-        return this.productService.findAllByExpiryDateLessThan(expiryDate);
+        return this.productService.getAllProductsByExpiryDateLessThan(expiryDate);
     }
-    @GetMapping("/v2/{expiryDate}")
+    @GetMapping("/greater/{expiryDate}")
     public List<Product> findAllByExpiryDateGreaterThan(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd")Date expiryDate){
-        return this.productService.findAllByExpiryDateGreaterThan(expiryDate);
+        return this.productService.getAllProductsByExpiryDateGreaterThan(expiryDate);
     }
-    //@GetMapping("/get/list/{}")
 }

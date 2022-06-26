@@ -8,8 +8,12 @@ import net.minidev.json.JSONUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
@@ -23,22 +27,16 @@ public class ProductManager implements ProductService {
 
     @Override
     public List<Product> getAllProducts() {
-          List<Product> productList =  this.productDao.findAll();
-            if(productList.isEmpty()){
-                System.out.println("true döndü");
-                return null;
-            }
-        System.out.println("false döndü");
-          return productList;
+          return  this.productDao.findAll();
     }
 
     @Override
-    public List<Product> findAllByExpiryDateLessThan(Date expiryDate) {
+    public List<Product> getAllProductsByExpiryDateLessThan(Date expiryDate) {
        return this.productDao.findAllByExpiryDateLessThan(expiryDate);
     }
 
     @Override
-    public  List<Product> findAllByExpiryDateGreaterThan(Date expiryDate) {
+    public  List<Product> getAllProductsByExpiryDateGreaterThan(Date expiryDate) {
         return this.productDao.findAllByExpiryDateGreaterThan(expiryDate);
     }
 }

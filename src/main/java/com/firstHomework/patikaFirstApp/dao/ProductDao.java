@@ -13,4 +13,5 @@ public interface ProductDao extends JpaRepository<Product, Long> {
     List<Product> findAllByExpiryDateLessThan(Date expiryDate);
     //son kullanma tarihi geçmemiş ürünleri listeleyen bir metot(son kullanma tarihi boş olanlar da gelmeli)
     List<Product> findAllByExpiryDateGreaterThan(Date expiryDate);
+
 }
