@@ -36,7 +36,7 @@ public class ProductManager implements ProductService {
     }
 
     @Override
-    public  List<Product> getAllProductsByExpiryDateGreaterThan(Date expiryDate) {
-        return this.productDao.findAllByExpiryDateGreaterThan(expiryDate);
+    public  List<Product> getAllProductsByExpiryDateGreaterThanOrExpiryDateIsNull(Date expiryDate) {
+        return this.productDao.findAllByExpiryDateGreaterThanOrExpiryDateIsNull(expiryDate);
     }
 }

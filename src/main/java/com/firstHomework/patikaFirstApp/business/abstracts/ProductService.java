@@ -11,6 +11,6 @@ public interface ProductService {
     List<Product> getAllProducts();
    // List<Product> findAllByExpiryDate(Date expiryDate);
     List<Product> getAllProductsByExpiryDateLessThan(Date expiryDate);
-    List<Product> getAllProductsByExpiryDateGreaterThan(Date expiryDate);
+    List<Product> getAllProductsByExpiryDateGreaterThanOrExpiryDateIsNull(Date expiryDate);
 
 }

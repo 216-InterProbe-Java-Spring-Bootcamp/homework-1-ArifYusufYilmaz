@@ -27,8 +27,8 @@ public class ProductController {
     public List<Product> findAllByExpiryDateLessThan(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd")Date expiryDate){
         return this.productService.getAllProductsByExpiryDateLessThan(expiryDate);
     }
-    @GetMapping("/greater/{expiryDate}")
-    public List<Product> findAllByExpiryDateGreaterThan(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd")Date expiryDate){
-        return this.productService.getAllProductsByExpiryDateGreaterThan(expiryDate);
+    @GetMapping("/greaterthanornull/{expiryDate}")
+    public List<Product> getAllProductsByExpiryDateGreaterThanOrExpiryDateIsNull(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd")Date expiryDate){
+        return this.productService.getAllProductsByExpiryDateGreaterThanOrExpiryDateIsNull(expiryDate);
     }
 }
